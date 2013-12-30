@@ -1,0 +1,6 @@
+<!--
+  insert_after 'h3.taxon-title'
+-->
+<% if accurate_title == 'Licensees: Additional Relationships' %>
+  <%= t(:licensing_notice) %>
+<% end %>

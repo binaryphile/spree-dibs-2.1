@@ -1,0 +1,4 @@
+<!--
+  replace_contents 'code[erb-silent]:contains("products.each")'
+-->
+products.ascend_by_available_on.each do |product|

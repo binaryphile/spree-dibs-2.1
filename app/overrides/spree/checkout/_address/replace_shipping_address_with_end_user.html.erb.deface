@@ -1,0 +1,4 @@
+<!--
+  replace 'code[erb-loud]:contains("t(:use_billing_address)")'
+-->
+<%= t(:i_am_the_end_user) %>

@@ -1,0 +1,4 @@
+<!--
+  replace 'code[erb-loud]:contains("t(:use_billing_address")'
+-->
+<%= label_tag 'order[use_billing]', t(:customer_is_end_user) %>

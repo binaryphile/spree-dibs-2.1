@@ -1,0 +1,4 @@
+<!--
+  replace 'code[erb-loud]:contains("link_to truncate(product.name, :length => 50)")'
+-->
+<%= link_to product.name, product, class: "info", itemprop: "name", title: product.name %>

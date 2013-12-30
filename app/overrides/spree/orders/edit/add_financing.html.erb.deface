@@ -1,0 +1,10 @@
+<!--
+  insert_bottom '[data-hook="inside_cart_form"]'
+-->
+<div style="float: right">
+  <h6 class="product-section-title">Financing Available</h6>
+  <ul>
+    <li><a href="https://www.elbtools.com/secure/calc.php?elbt=132311365260">Finance Calculator</a></li>
+    <li><a href="https://www.elbtools.com/secure/apply.php?elbt=132311365260">Finance Application</a></li>
+  </ul>
+</div>
