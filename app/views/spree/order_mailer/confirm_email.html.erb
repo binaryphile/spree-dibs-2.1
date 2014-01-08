@@ -1,0 +1,146 @@
+<html>
+<body>
+<p>Dear <%= @order.bill_address.firstname %>,</p>
+
+<p>Thank you for your DidItBetter.com Software order. Your payment has been
+processed.</p>
+
+<p><strong>Billing address:</strong></p>
+<p>
+ <strong><%= @order.bill_address.full_name %></strong><br />
+ <% if @order.bill_address.company != "" %>
+   <%= @order.bill_address.company %><br />
+ <% end %>
+ <% if @order.bill_address.phone != "" %>
+   <%= @order.bill_address.phone %><br />
+ <% end %>
+ <% if @order.email != "" %>
+   <%= @order.email %><br />
+ <% end %>
+ <%= @order.bill_address.address1 %><br />
+ <% if @order.bill_address.address2 != "" %>
+   <%= @order.bill_address.address2 %><br />
+ <% end %>
+ <%= @order.bill_address.city %>
+ <% if @order.bill_address.state %>
+   , <%= @order.bill_address.state.abbr %>
+ <% end %>
+ <%= @order.bill_address.zipcode %>
+ <% if @order.bill_address.country.iso3 != "USA" %>
+    <%= @order.bill_address.country.iso3 %>
+ <% end %>
+</p>
+<% if @order.ship_address.full_name != @order.bill_address.full_name %>
+  <p><strong>End user address:</strong></p>
+  <p>
+    <strong><%= @order.ship_address.full_name %></strong><br />
+    <% if @order.ship_address.company != "" %>
+      <%= @order.ship_address.company %><br />
+    <% end %>
+    <% if @order.ship_address.phone != "" %>
+      <%= @order.ship_address.phone %><br />
+    <% end %>
+    <%= @order.ship_address.address1 %><br />
+    <% if @order.ship_address.address2 != "" %>
+      <%= @order.ship_address.address2 %><br />
+    <% end %>
+    <%= @order.ship_address.city %>
+    <% if @order.ship_address.state %>
+      , <%= @order.ship_address.state.abbr %>
+    <% end %>
+    <%= @order.ship_address.zipcode %>
+    <% if @order.ship_address.country.iso3 != "USA" %>
+       <%= @order.ship_address.country.iso3 %>
+    <% end %>
+<% end %>
+<hr/>
+
+<h5>Order Summary (PROCESSING)</h5>
+
+<hr/>
+<pre>
+<% @order.line_items.each do |item| %>
+ <%= item.variant.sku %> <%= raw(item.variant.product.name) %> <%= raw(item.variant.options_text) -%> <%= render :partial => 'spree/shared/additional_line_item_fields', :locals=>{:item => item} %>
+ (<%=item.quantity%>) @ <%= number_to_currency item.price %> = <%= number_to_currency(item.price * item.quantity) %>
+<% end %>
+</pre>
+<hr/>
+<pre>
+Subtotal: <%= number_to_currency @order.item_total %>
+<% @order.adjustments.each do |adjustment| %>
+  <%= raw(adjustment.label) %> <%= number_to_currency(adjustment.amount) %>
+<% end %>
+Order Total: <%= number_to_currency(@order.total) %>
+</pre>
+<p>Thank you for your business. Please note "Advantage Intl Computers" will
+appear on your credit card statement for this order.</p>
+
+<p>If you placed a software licensing order, download the software or check
+for updates at <a href="http://www.diditbetter.com/store.aspx" target="_blank">http://www.diditbetter.com/store.aspx</a>.</p>
+
+<p>To access our Downloads area, click on Downloads, and log in. If this is
+your first time downloading, please register to create a new account to
+access our Downloads area.</p>
+
+<p>Product Activation: Once the software or update is installed, submit
+your registration request from the program to request your license key
+-- please refer to the installation guide for instructions. License keys
+are issued Monday through Friday 10 am to 4 pm EST (excluding holidays)
+within 1 to 2 business days from the time we receive your completed
+registration request. Incomplete or incorrect registration requests will
+delay the processing of your request. Please note your software license
+is a perpetual license for the version you initially purchased and is
+licensed to the license address you specify in your registration
+request. If you are a reseller purchasing on behalf of an end user,
+please make sure to include the end user's company name, contact name of
+the individual authorizing the purchase at the end user company, end
+user's phone and end user's email address.</p>
+
+<p>If you placed a single remote support session order, Customer Care will
+contact you to schedule your appointment. Please review the section
+'Before Your Appointment' and 'Initiating Your Appointment' at
+<a href="http://support.diditbetter.com/remote-support.aspx" target="_blank">http://support.diditbetter.com/remote-support.aspx</a> prior to your scheduled session. If you purchased one
+of our premium support packages and would like to schedule a session,
+please submit a support request to provide our technical team some
+background on what we can help you with; go to
+<a href="http://support.diditbetter.com/" target="_blank">http://support.diditbetter.com/</a> and select the
+'Request Support' link.</p>
+
+<p>Terms and Conditions: All sales are final. We offer no refunds and no
+returns once the software license(s), value bundles, software assurance
+subscription/renewals, add ons, service agreements, and/or support is
+purchased. No cancellations. No exchanges. The reason for this policy is
+that you have the opportunity to fully evaluate the solution in advance
+to determine it to be suitable for your needs and receive email support
+on the solution before purchasing. Please note that by placing your
+order and purchasing anything on our online store and/or receiving your
+license key via email, you have chosen to accept our 'No Return/No
+Refund' policy.</p>
+
+<p>For assistance with your web order, please contact us: USA Customers
+(800) 837 8636 ext 100 / Outside the USA 001 813 977 5739. You may also
+email <a href="mailto:info@diditbetter.com">info@diditbetter.com</a>.</p>
+
+<p>With Regards,</p>
+
+<p><strong>DidItBetter.com Software Online Store</strong><br />
+A division of Advantage International Inc.</p>
+
+<h5>Full Product Descriptions</h5>
+
+<p>For your records, the following are the complete product descriptions
+for your items:</p>
+<pre>
+<% for item in @order.line_items %>
+<%=item.variant.sku %> <%=item.variant.product.name%>
+----------
+<%= item.variant.product.description %>
+
+<% end %>
+</pre>
+<% if @order.bill_address.company != "" %>
+<p><a href="http://redmine.diditbetter.com/search/index/paidsupport?q=<%= URI::encode_www_form_component @order.bill_address.company %>">For internal use</a></p>
+<% end %>
+</body>
+</html>
+

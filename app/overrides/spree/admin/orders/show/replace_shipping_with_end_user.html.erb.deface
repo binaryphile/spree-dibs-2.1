@@ -1,4 +1,0 @@
-<!--
-  replace 'code[erb-loud]:contains("t(:ship_address)")'
--->
-<%= t(:end_user_address) %>

@@ -1,0 +1,61 @@
+Dear <%= @order.bill_address.firstname %>,
+
+The pending transaction on your account has been voided.
+
+Please review and retain the following order information for your records.
+
+This email is informational only.  No action is required on your part.
+
+Billing address:
+
+<%= @order.bill_address.full_name %>
+<% if @order.bill_address.company != "" %>
+<%= @order.bill_address.company %>
+<% end %>
+<% if @order.bill_address.phone != "" %>
+<%= @order.bill_address.phone %>
+<% end %>
+<% if @order.email != "" %>
+<%= @order.email %>
+<% end %>
+<%= @order.bill_address.address1 %>
+<% if @order.bill_address.address2 != "" %>
+<%= @order.bill_address.address2 %>
+<% end %>
+<%= @order.bill_address.city %><% if @order.bill_address.state %>, <%= @order.bill_address.state.abbr %><% end %><%= @order.bill_address.zipcode %> <% if @order.bill_address.country.iso3 != "USA" %><%= @order.bill_address.country.iso3 %>
+<% end %>
+
+<% if @order.ship_address.full_name != @order.bill_address.full_name %>
+End user address:
+<%= @order.ship_address.full_name %>
+<% if @order.ship_address.company != "" %>
+<%= @order.ship_address.company %>
+<% end %>
+<% if @order.ship_address.phone != "" %>
+<%= @order.ship_address.phone %>
+<% end %>
+<%= @order.ship_address.address1 %>
+<% if @order.ship_address.address2 != "" %>
+<%= @order.ship_address.address2 %>
+<% end %>
+<%= @order.ship_address.city %><% if @order.ship_address.state %>, <%= @order.ship_address.state.abbr %><% end %> <%= @order.ship_address.zipcode %><% if @order.ship_address.country.iso3 != "USA" %> <%= @order.ship_address.country.iso3 %>
+<% end %>
+<% end %>
+
+============================================================
+Order Summary (VOIDED)
+============================================================
+<% @order.line_items.each do |item| %>
+  <%= item.variant.sku %> <%= raw(item.variant.product.name) %> <%= raw(item.variant.options_text) -%> <%= render :partial => 'spree/shared/additional_line_item_fields', :locals=>{:item => item} %>
+  (<%=item.quantity%>) @ <%= number_to_currency item.price %> = <%= number_to_currency(item.price * item.quantity) %>
+<% end %>
+============================================================
+Subtotal: <%= number_to_currency @order.item_total %>
+<% @order.adjustments.each do |adjustment| %>
+  <%= raw(adjustment.label) %> <%= number_to_currency(adjustment.amount) %>
+<% end %>
+Order Total: <%= number_to_currency(@order.total) %>
+
+<% if @order.bill_address.company != "" %>
+For internal use: http://redmine.diditbetter.com/search/index/paidsupport?q=<%= URI::encode_www_form_component @order.bill_address.company %>
+<% end %>

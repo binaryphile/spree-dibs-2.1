@@ -1,4 +1,4 @@
 <!--
-  replace 'code[erb-loud]:contains("t(:shipping_address)")'
+  replace 'erb[loud]:contains("t(:shipping_address)")'
 -->
-<%= t(:end_user_address) %>
+<%= Spree.t(:end_user_address) %>

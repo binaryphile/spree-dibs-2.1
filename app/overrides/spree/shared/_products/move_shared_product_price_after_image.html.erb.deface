@@ -1,5 +1,4 @@
 <!--
   insert_bottom 'div.product-image'
-  remove 'span.price.selling'
 -->
 <span class="price selling" itemprop="price"><%= number_to_currency product.price %></span>

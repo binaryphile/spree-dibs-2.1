@@ -1,0 +1,50 @@
+nav.pagination {
+  float: right;
+  margin-bottom: 5px;
+}
+
+ul#products li {
+  clear: right;
+}
+
+ul#products li a {
+  height: 104px;
+}
+
+ul#products li a.info {
+  height: 75px;
+  color: #888;
+  margin-bottom: 20px;
+  border-bottom: none;
+}
+
+ul#products li .price {
+  padding-bottom: 5px;
+}
+
+#product-images #main-image {
+  padding: 5px;
+}
+
+.row {
+  margin-top: 10px;
+}
+
+#logo {
+  margin-top: 20px;
+}
+
+.AuthorizeNetSeal {
+  float: right;
+  padding: 10px 0;
+}
+
+#ad_hoc_options dl dt, #ad_hoc_options dl dd {
+  display: block;
+  width: 100%;
+  padding: 5px 0 0;
+}
+
+#ad_hoc_options dl dd {
+  margin-left: 0;
+}

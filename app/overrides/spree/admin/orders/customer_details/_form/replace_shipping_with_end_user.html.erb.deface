@@ -1,4 +1,0 @@
-<!--
-  replace 'code[erb-loud]:contains("t(:shipping_address)")'
--->
-<%= render :partial => 'spree/admin/shared/address_form', :locals => { :f => sa_form, :name => t(:end_user_address), :use_billing => true } %>

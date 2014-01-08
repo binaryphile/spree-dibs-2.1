@@ -1,0 +1,76 @@
+<html>
+<body>
+<p>Dear <%= @order.bill_address.firstname %>,</p>
+
+<p>Your order has been CANCELED.  Please retain this cancellation information for your records.</p>
+
+<p><strong>Billing address:</strong></p>
+<p>
+ <strong><%= @order.bill_address.full_name %></strong><br />
+ <% if @order.bill_address.company != "" %>
+   <%= @order.bill_address.company %><br />
+ <% end %>
+ <% if @order.bill_address.phone != "" %>
+   <%= @order.bill_address.phone %><br />
+ <% end %>
+ <% if @order.email != "" %>
+   <%= @order.email %><br />
+ <% end %>
+ <%= @order.bill_address.address1 %><br />
+ <% if @order.bill_address.address2 != "" %>
+   <%= @order.bill_address.address2 %><br />
+ <% end %>
+ <%= @order.bill_address.city %>
+ <% if @order.bill_address.state %>
+   , <%= @order.bill_address.state.abbr %>
+ <% end %>
+ <%= @order.bill_address.zipcode %>
+ <% if @order.bill_address.country.iso3 != "USA" %>
+    <%= @order.bill_address.country.iso3 %>
+ <% end %>
+</p>
+<% if @order.ship_address.full_name != @order.bill_address.full_name %>
+  <p><strong>End user address:</strong></p>
+  <p>
+    <strong><%= @order.ship_address.full_name %></strong><br />
+    <% if @order.ship_address.company != "" %>
+      <%= @order.ship_address.company %><br />
+    <% end %>
+    <% if @order.ship_address.phone != "" %>
+      <%= @order.ship_address.phone %><br />
+    <% end %>
+    <%= @order.ship_address.address1 %><br />
+    <% if @order.ship_address.address2 != "" %>
+      <%= @order.ship_address.address2 %><br />
+    <% end %>
+    <%= @order.ship_address.city %>
+    <% if @order.ship_address.state %>
+      , <%= @order.ship_address.state.abbr %>
+    <% end %>
+    <%= @order.ship_address.zipcode %>
+    <% if @order.ship_address.country.iso3 != "USA" %>
+       <%= @order.ship_address.country.iso3 %>
+    <% end %>
+<% end %>
+<hr/>
+<h5>Order Summary (CANCELED)</h5>
+<hr/>
+<pre>
+<% @order.line_items.each do |item| %>
+ <%= item.variant.sku %> <%= raw(item.variant.product.name) %> <%= raw(item.variant.options_text) -%> <%= render :partial => 'spree/shared/additional_line_item_fields', :locals=>{:item => item} %>
+ (<%=item.quantity%>) @ <%= number_to_currency item.price %> = <%= number_to_currency(item.price * item.quantity) %>
+<% end %>
+</pre>
+<hr/>
+<pre>
+Subtotal: <%= number_to_currency @order.item_total %>
+<% @order.adjustments.each do |adjustment| %>
+  <%= raw(adjustment.label) %> <%= number_to_currency(adjustment.amount) %>
+<% end %>
+Order Total: <%= number_to_currency(@order.total) %>
+</pre>
+<% if @order.bill_address.company != "" %>
+<p><a href="http://redmine.diditbetter.com/search/index/paidsupport?q=<%= URI::encode_www_form_component @order.bill_address.company %>">For internal use</a></p>
+<% end %>
+</body>
+</html>

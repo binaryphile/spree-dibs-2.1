@@ -1,0 +1,4 @@
+<!--
+  replace 'erb[loud]:contains("t(:use_billing_address")'
+-->
+<%= label_tag 'order[use_billing]', Spree.t(:customer_is_end_user) %>
