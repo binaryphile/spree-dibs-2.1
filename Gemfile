@@ -4,8 +4,8 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.1'
 
 # Use mysql as the database for Active Record
-gem 'mysql2', group: :production
-gem 'sqlite3', group: :development
+gem 'mysql2', groups: :production
+gem 'sqlite3', groups: :development
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
@@ -37,13 +37,14 @@ end
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
 # Use unicorn as the app server
-# gem 'unicorn'
+gem 'unicorn', groups: :production
 
 # Use Capistrano for deployment
-# gem 'capistrano', group: :development
+gem 'capistrano', '~> 2.15.5', groups: :development
+gem 'foreman', groups: :production
 
 # Use debugger
-# gem 'debugger', group: [:development, :test]
+# gem 'debugger', groups: [:development, :test]
 
 gem 'spree', '2.1.3'
 gem 'spree_gateway', :git => 'https://github.com/spree/spree_gateway.git', :branch => '2-1-stable'
