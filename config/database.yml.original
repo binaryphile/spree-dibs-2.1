@@ -23,10 +23,19 @@ test:
   pool: 5
   timeout: 5000
 
+staging:
+  adapter: mysql2
+  encoding: utf8
+  database: staging
+  pool: 5
+  username: root
+  password:
+  host: localhost
+
 production:
   adapter: mysql2
   encoding: utf8
-  database: spree-dibs_production
+  database: production
   pool: 5
   username: root
   password:

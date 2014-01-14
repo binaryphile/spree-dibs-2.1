@@ -8,7 +8,6 @@ require 'capistrano/ext/multistage'
 set :application, "spree"
 set :user, 'spree'
 set :group, 'www-data'
-set :rails_env, 'production'
 
 set :scm, :git
 set :repository,  "git://github.com/binaryphile/spree-dibs-2.1"
