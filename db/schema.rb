@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140113212312) do
+ActiveRecord::Schema.define(version: 20140115181062) do
 
   create_table "spree_activators", force: true do |t|
     t.string   "description"
@@ -25,6 +25,40 @@ ActiveRecord::Schema.define(version: 20140113212312) do
     t.string   "code"
     t.boolean  "advertise",    default: false
     t.string   "path"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "spree_ad_hoc_option_types", force: true do |t|
+    t.integer  "product_id"
+    t.integer  "option_type_id"
+    t.string   "price_modifier_type"
+    t.boolean  "is_required",         default: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "position",            default: 0
+  end
+
+  create_table "spree_ad_hoc_option_values", force: true do |t|
+    t.integer  "ad_hoc_option_type_id"
+    t.integer  "option_value_id"
+    t.decimal  "price_modifier",        precision: 8, scale: 2, default: 0.0, null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "position"
+    t.boolean  "selected"
+    t.decimal  "cost_price_modifier",   precision: 8, scale: 2
+  end
+
+  create_table "spree_ad_hoc_option_values_line_items", force: true do |t|
+    t.integer  "line_item_id"
+    t.integer  "ad_hoc_option_value_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "spree_ad_hoc_variant_exclusions", force: true do |t|
+    t.integer  "product_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -127,6 +161,30 @@ ActiveRecord::Schema.define(version: 20140113212312) do
     t.string   "gateway_payment_profile_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "spree_customizable_product_options", force: true do |t|
+    t.integer  "product_customization_type_id"
+    t.integer  "position"
+    t.string   "presentation",                  null: false
+    t.string   "name",                          null: false
+    t.string   "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "spree_customized_product_options", force: true do |t|
+    t.integer  "product_customization_id"
+    t.integer  "customizable_product_option_id"
+    t.string   "value"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "customization_image"
+  end
+
+  create_table "spree_excluded_ad_hoc_option_values", force: true do |t|
+    t.integer "ad_hoc_variant_exclusion_id"
+    t.integer "ad_hoc_option_value_id"
   end
 
   create_table "spree_gateways", force: true do |t|
@@ -282,6 +340,26 @@ ActiveRecord::Schema.define(version: 20140113212312) do
     t.integer "variant_id",                         null: false
     t.decimal "amount",     precision: 8, scale: 2
     t.string  "currency"
+  end
+
+  create_table "spree_product_customization_types", force: true do |t|
+    t.string   "name"
+    t.string   "presentation"
+    t.string   "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "spree_product_customization_types_products", id: false, force: true do |t|
+    t.integer "product_customization_type_id"
+    t.integer "product_id"
+  end
+
+  create_table "spree_product_customizations", force: true do |t|
+    t.integer  "line_item_id"
+    t.integer  "product_customization_type_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "spree_product_option_types", force: true do |t|

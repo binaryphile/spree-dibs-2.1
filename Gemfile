@@ -49,3 +49,4 @@ gem 'foreman', groups: :production
 gem 'spree', github: 'spree/spree', branch: '2-1-stable'
 gem 'spree_gateway', :git => 'https://github.com/spree/spree_gateway.git', :branch => '2-1-stable'
 gem 'spree_auth_devise', :git => 'https://github.com/spree/spree_auth_devise.git', :branch => '2-1-stable'
+gem 'spree_flexi_variants', github: 'jsqu99/spree_flexi_variants', branch: 'spree-2-1-wip'
