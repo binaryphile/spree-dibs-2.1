@@ -1,6 +1,0 @@
-<!--
-  insert_after 'erb[loud]:contains("continue")'
--->
-<% if @order.user and @order.user.has_spree_role? "dibs_referral" %>
-  <%= mail_to t(:friend), t(:send_referral), bcc: "referral@diditbetter.com;quoted@diditbetter.com", subject: t(:cart_referral_subject), body: dibs_referral_body, class: 'button gray' %>
-<% end %>
