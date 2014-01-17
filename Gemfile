@@ -51,3 +51,4 @@ gem 'spree_gateway', :git => 'https://github.com/spree/spree_gateway.git', :bran
 gem 'spree_auth_devise', :git => 'https://github.com/spree/spree_auth_devise.git', :branch => '2-1-stable'
 gem 'spree_flexi_variants', github: 'jsqu99/spree_flexi_variants', branch: 'spree-2-1-wip'
 gem 'spree_email_to_friend', github: 'spree/spree_email_to_friend', branch: '2-1-stable'
+gem 'spree_print_invoice', github: 'spree/spree_print_invoice', branch: '2-1-stable'

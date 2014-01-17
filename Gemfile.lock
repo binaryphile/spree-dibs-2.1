@@ -70,6 +70,15 @@ GIT
       spree_core (~> 2.1.0)
 
 GIT
+  remote: git://github.com/spree/spree_print_invoice.git
+  revision: a8343214c6a823df01d5f2e8033866b92fb8d83c
+  branch: 2-1-stable
+  specs:
+    spree_print_invoice (2.0.0)
+      prawn (= 0.8.4)
+      spree_core (~> 2.0)
+
+GIT
   remote: https://github.com/spree/spree_auth_devise.git
   revision: 45a1e7aa5b235e42db52a754d7e827caf4e0d406
   branch: 2-1-stable
@@ -246,6 +255,13 @@ GEM
     polyamorous (0.6.4)
       activerecord (>= 3.0)
     polyglot (0.3.3)
+    prawn (0.8.4)
+      prawn-core (>= 0.8.4, < 0.9)
+      prawn-layout (>= 0.8.4, < 0.9)
+      prawn-security (>= 0.8.4, < 0.9)
+    prawn-core (0.8.4)
+    prawn-layout (0.8.4)
+    prawn-security (0.8.4)
     rabl (0.8.4)
       activesupport (>= 2.3.14)
     rack (1.5.2)
@@ -353,6 +369,7 @@ DEPENDENCIES
   spree_email_to_friend!
   spree_flexi_variants!
   spree_gateway!
+  spree_print_invoice!
   sqlite3
   turbolinks
   uglifier (>= 1.3.0)
