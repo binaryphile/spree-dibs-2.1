@@ -60,4 +60,6 @@ SpreeDibs::Application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+  get '/dibs-referral-request', to: 'dibs_referrals#dibs_referral_request'
+  get '/dibs-referral-profile', to: 'dibs_referrals#dibs_referral_profile'
 end

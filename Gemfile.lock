@@ -1,4 +1,12 @@
 GIT
+  remote: git://github.com/binaryphile/spree_dibs_referral.git
+  revision: 003c7de3c23a76a6613bf2e6fd970ca0f64c9385
+  branch: 2-1-stable
+  specs:
+    spree_dibs_referral (1.2.0)
+      spree_core (~> 2.1.4.beta)
+
+GIT
   remote: git://github.com/jsqu99/spree_flexi_variants.git
   revision: b4d1f186f5685294b85e87b132e96a817eabbfc2
   branch: spree-2-1-wip
@@ -366,6 +374,7 @@ DEPENDENCIES
   sdoc
   spree!
   spree_auth_devise!
+  spree_dibs_referral!
   spree_email_to_friend!
   spree_flexi_variants!
   spree_gateway!
