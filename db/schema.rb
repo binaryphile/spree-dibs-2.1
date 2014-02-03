@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 21030514200156) do
+ActiveRecord::Schema.define(version: 21030514200159) do
 
   create_table "spree_activators", force: true do |t|
     t.string   "description"
@@ -335,6 +335,8 @@ ActiveRecord::Schema.define(version: 21030514200156) do
     t.string   "channel",                                                  default: "spree"
     t.decimal  "tax_total",                       precision: 10, scale: 2, default: 0.0,     null: false
     t.integer  "dibs_referral_id"
+    t.integer  "invoice_number"
+    t.date     "invoice_date"
   end
 
   add_index "spree_orders", ["completed_at"], name: "index_spree_orders_on_completed_at"
@@ -383,10 +385,13 @@ ActiveRecord::Schema.define(version: 21030514200156) do
   add_index "spree_preferences", ["key"], name: "index_spree_preferences_on_key", unique: true
 
   create_table "spree_prices", force: true do |t|
-    t.integer "variant_id",                         null: false
-    t.decimal "amount",     precision: 8, scale: 2
-    t.string  "currency"
+    t.integer  "variant_id",                         null: false
+    t.decimal  "amount",     precision: 8, scale: 2
+    t.string   "currency"
+    t.datetime "deleted_at"
   end
+
+  add_index "spree_prices", ["variant_id", "currency"], name: "index_spree_prices_on_variant_id_and_currency"
 
   create_table "spree_product_customization_types", force: true do |t|
     t.string   "name"
