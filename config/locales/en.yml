@@ -7,12 +7,14 @@ en:
     Valid only for Add2Exchange licensees who have valid software
     assurance in place and would like to add more relationships to their
     existing licensed product.
-  order_mailer:
-    void_email:
-      subject: "Transaction Voided"
-    capture_email:
-      subject: "Transaction Processing Complete"
+  spree:
+    order_mailer:
+      void_email:
+        subject: "Transaction Voided"
+      capture_email:
+        subject: "Transaction Processing Complete"
   print_note: ""
   cart_referral_subject: Recommended options you requested from DidItBetter.com
   referral_granted: Congratulations! You can start making referrals. Note that you must complete the signup process before you can be compensated.  Please close this window to go back to the signup process.
   add: Add
+  subtract: Subtract
