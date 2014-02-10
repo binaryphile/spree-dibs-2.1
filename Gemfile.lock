@@ -52,7 +52,7 @@ GIT
 
 GIT
   remote: git://github.com/binaryphile/spree_dibs_referral.git
-  revision: 003c7de3c23a76a6613bf2e6fd970ca0f64c9385
+  revision: eb8eb89479693cab2add26f202831e911c77f319
   branch: 2-1-stable
   specs:
     spree_dibs_referral (1.2.0)
