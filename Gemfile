@@ -4,7 +4,8 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.1'
 
 # Use mysql as the database for Active Record
-gem 'mysql2'
+gem 'mysql2', groups: :production
+gem 'sqlite3', groups: :development
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
@@ -44,11 +45,12 @@ gem 'foreman', groups: :production
 
 # Use debugger
 # gem 'debugger', groups: [:development, :test]
+gem 'pry', groups: :development
 
 gem 'spree', github: 'binaryphile/spree', branch: 'payment_state'
 gem 'spree_gateway', github: 'spree/spree_gateway', branch: '2-1-stable'
 gem 'spree_auth_devise', github: 'spree/spree_auth_devise', branch: '2-1-stable'
-gem 'spree_flexi_variants', github: 'jsqu99/spree_flexi_variants', branch: 'spree-2-1-wip'
+gem 'spree_flexi_variants', github: 'binaryphile/spree_flexi_variants', branch: 'quantityhash'
 gem 'spree_email_to_friend', github: 'spree/spree_email_to_friend', branch: '2-1-stable'
 gem 'spree_print_invoice', github: 'spree/spree_print_invoice', branch: '2-1-stable'
 gem 'spree_dibs_referral', github: 'binaryphile/spree_dibs_referral', branch: '2-1-stable'
