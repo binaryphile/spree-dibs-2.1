@@ -13,8 +13,15 @@ en:
         subject: "Transaction Voided"
       capture_email:
         subject: "Transaction Processing Complete"
+    on_sale:
+      short: On sale
+      heading: Now on sale
+      text: 'For a limited time, enjoy <span style="color: red;">20% off!</span>'
+    msrp: msrp
+    sale_price: Sale Price
   print_note: ""
   cart_referral_subject: Recommended options you requested from DidItBetter.com
   referral_granted: Congratulations! You can start making referrals. Note that you must complete the signup process before you can be compensated.  Please close this window to go back to the signup process.
   add: Add
   subtract: Subtract
+  on_sale: On Sale

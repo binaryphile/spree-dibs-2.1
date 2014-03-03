@@ -1,0 +1,6 @@
+<% if @product.on_sale? %>
+<div class="sale-text" id="on_sale">
+  <h3 class="sale-heading"><%= Spree.t('on_sale.heading') %></h3>
+  <div><%= Spree.t('on_sale.text').html_safe %></div>
+</div>
+<% end %>
