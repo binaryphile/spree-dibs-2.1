@@ -1,4 +1,7 @@
 <!--
   insert_bottom 'div.product-image'
 -->
-<span class="price selling" itemprop="price"><%= number_to_currency product.price %></span>
+<% if product.on_sale? %>
+<span class="sale-price sale-tag"><%= t(:on_sale) %></span>
+<% end %>
+<span class="price selling" itemprop="price"><%= display_price(product) %></span>
