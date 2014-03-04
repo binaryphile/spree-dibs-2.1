@@ -1,0 +1,6 @@
+<!--
+insert_bottom '.cart-item-price'
+-->
+<% if line_item.product.on_sale? %>
+<div class="sale-notice"><%= t(:sale_price) %></div>
+<% end %>
