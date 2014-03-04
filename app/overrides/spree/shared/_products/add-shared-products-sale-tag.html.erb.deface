@@ -1,0 +1,6 @@
+<!--
+insert_top '.product-image'
+-->
+<% if product.on_sale? %>
+<div class="sale-tag"></div>
+<% end %>
