@@ -1,11 +1,12 @@
 <!--
 insert_top '.sidebar-item'
 -->
-<h6 class="taxonomy-root">Popular Now</h6>
+<h6 class="taxonomy-root">Recently purchased</h6>
 <ul class="taxons-list">
-  <li><a href="/dibs-referral?line_item_options%5B0%5D%5B215%5D=886&products%5B0%5D=179&quantity%5B179%5D=1">Software Assurance Renewal</a></li>
-  <li><a href="/dibs-referral?line_item_options%5B0%5D%5B170%5D=666&products%5B0%5D=150&quantity%5B150%5D=1">Add2Exchange Crossgrade</a></li>
-  <li><a href="/dibs-referral?line_item_options%5B0%5D%5B296%5D=1231&products%5B0%5D=222&quantity%5B222%5D=1">Add2Outlook Crossgrade</a></li>
+  <li><a href="/dibs-referral?products%5B0%5D=96&quantity%5B96%5D=1">Migration/Move Value Bundle</a></li>
+  <li><a href="/dibs-referral?line_item_options%5B0%5D%5B170%5D=666&products%5B0%5D=150&quantity%5B150%5D=1">Crossgrade to Enterprise</a></li>
+  <li><a href="/dibs-referral?line_item_options%5B0%5D%5B296%5D=1231&products%5B0%5D=222&quantity%5B222%5D=1">Hosted Exchange Crossgrade</a></li>
+  <li><a href="/dibs-referral?line_item_options%5B0%5D%5B215%5D=886&products%5B0%5D=179&quantity%5B179%5D=1">Add2Exchange Enterprise Renewal</a></li>
   <li><a href="/dibs-referral?products%5B0%5D=2&quantity%5B2%5D=1">4-hr Premier Support</a></li>
   <li><a href="/dibs-referral?line_item_options%5B0%5D%5B181%5D=708&products%5B0%5D=2&quantity%5B2%5D=1">8-hr Premier Support</a></li>
 </ul>
