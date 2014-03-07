@@ -20,5 +20,6 @@
 /config/initializers/secret_token.rb
 /config/initializers/devise.rb
 /config/database.yml
+/config/database.mysql.yml
 /public/assets
 /public/spree
