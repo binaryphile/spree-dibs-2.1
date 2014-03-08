@@ -69,6 +69,15 @@ GIT
       spree (>= 2.1)
 
 GIT
+  remote: git://github.com/geermc4/spree_advanced_reporting.git
+  revision: c7744350d991f97e99f7c68dcde19e1adcdf3fa9
+  branch: 2-1-stable
+  specs:
+    spree_advanced_reporting (2.0.1)
+      ruport (>= 1.6.3)
+      ruport-util
+
+GIT
   remote: git://github.com/spree/spree_auth_devise.git
   revision: f6f91480655b8bd0179ba29a7fef917e8d20e101
   branch: 2-1-stable
@@ -186,6 +195,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.7.0)
+    color (1.5.1)
     colorize (0.6.0)
     deface (1.0.0)
       colorize (>= 0.5.8)
@@ -202,6 +212,7 @@ GEM
     dotenv (0.9.0)
     erubis (2.7.0)
     execjs (2.0.2)
+    fastercsv (1.5.5)
     ffaker (1.23.0)
     foreman (0.63.0)
       dotenv (>= 0.7)
@@ -232,6 +243,8 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    mailfactory (1.4.0)
+      mime-types (>= 1.13.1)
     method_source (0.8.2)
     mime-types (1.25.1)
     mini_magick (3.7.0)
@@ -264,6 +277,9 @@ GEM
       mime-types
     paranoia (2.0.2)
       activerecord (~> 4.0)
+    pdf-writer (1.1.8)
+      color (>= 1.4.0)
+      transaction-simple (~> 1.3)
     polyamorous (0.6.4)
       activerecord (>= 3.0)
     polyglot (0.3.3)
@@ -305,6 +321,14 @@ GEM
     rdoc (4.1.1)
       json (~> 1.4)
     recaptcha (0.3.6)
+    rubyzip (1.1.0)
+    ruport (1.6.3)
+      fastercsv
+      pdf-writer (= 1.1.8)
+    ruport-util (0.14.0)
+      mailfactory (>= 1.2.3)
+      rubyzip (>= 0.9.1)
+      ruport (>= 1.6.0)
     sass (3.2.14)
     sass-rails (4.0.1)
       railties (>= 4.0.0, < 5.0)
@@ -341,6 +365,7 @@ GEM
     thread_safe (0.1.3)
       atomic
     tilt (1.4.1)
+    transaction-simple (1.4.0.2)
     treetop (1.4.15)
       polyglot
       polyglot (>= 0.3.1)
@@ -382,6 +407,7 @@ DEPENDENCIES
   sass-rails (~> 4.0.0)
   sdoc
   spree!
+  spree_advanced_reporting!
   spree_auth_devise!
   spree_dibs_referral!
   spree_email_to_friend!
