@@ -53,4 +53,4 @@ gem 'spree_flexi_variants', github: 'binaryphile/spree_flexi_variants', branch: 
 gem 'spree_email_to_friend', github: 'spree/spree_email_to_friend', branch: '2-1-stable'
 gem 'spree_print_invoice', github: 'spree/spree_print_invoice', branch: '2-1-stable'
 gem 'spree_dibs_referral', github: 'binaryphile/spree_dibs_referral', branch: '2-1-stable'
-gem 'spree_advanced_reporting', github: 'geermc4/spree_advanced_reporting', branch: '2-1-stable'
+gem 'spree_advanced_reporting', github: 'binaryphile/spree_advanced_reporting', branch: '2-1-stable'
