@@ -51,6 +51,15 @@ GIT
       spree_core (= 2.1.4)
 
 GIT
+  remote: git://github.com/binaryphile/spree_advanced_reporting.git
+  revision: a9f44c4164a23f6bde3a05d5811b0f0bbb616ea3
+  branch: 2-1-stable
+  specs:
+    spree_advanced_reporting (2.0.1)
+      ruport (>= 1.6.3)
+      ruport-util
+
+GIT
   remote: git://github.com/binaryphile/spree_dibs_referral.git
   revision: 992fcfcc28e8983599b7e3b3adb579b47d091f2f
   branch: 2-1-stable
@@ -67,15 +76,6 @@ GIT
       carrierwave
       mini_magick
       spree (>= 2.1)
-
-GIT
-  remote: git://github.com/geermc4/spree_advanced_reporting.git
-  revision: c7744350d991f97e99f7c68dcde19e1adcdf3fa9
-  branch: 2-1-stable
-  specs:
-    spree_advanced_reporting (2.0.1)
-      ruport (>= 1.6.3)
-      ruport-util
 
 GIT
   remote: git://github.com/spree/spree_auth_devise.git
