@@ -39,7 +39,11 @@ end
 gem 'unicorn', groups: :production
 
 # Use Capistrano for deployment
-gem 'capistrano', '~> 2.15.5', groups: :development
+group :development do
+  gem 'capistrano', '~> 2.15.5'
+  gem 'net-ssh', "~> 2.7.0"
+end
+
 gem 'foreman', groups: :production
 
 # Use debugger
