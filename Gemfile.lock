@@ -61,8 +61,8 @@ GIT
 
 GIT
   remote: git://github.com/binaryphile/spree_dibs_referral.git
-  revision: 68f14ec767166b9317bc9abc6eba7ce7ff626b63
-  branch: referrals
+  revision: 4155207013de5da32877d5d3fb261f3627edd4cb
+  branch: referral
   specs:
     spree_dibs_referral (2.1.4)
       spree_core (~> 2.1.4)
