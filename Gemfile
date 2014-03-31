@@ -56,5 +56,5 @@ gem 'spree_auth_devise', github: 'spree/spree_auth_devise', branch: '2-1-stable'
 gem 'spree_flexi_variants', github: 'binaryphile/spree_flexi_variants', branch: 'quantityhash'
 gem 'spree_email_to_friend', github: 'spree/spree_email_to_friend', branch: '2-1-stable'
 gem 'spree_print_invoice', github: 'spree/spree_print_invoice', branch: '2-1-stable'
-gem 'spree_dibs_referral', github: 'binaryphile/spree_dibs_referral', ref: "9f7ef0f"
+gem 'spree_dibs_referral', github: 'binaryphile/spree_dibs_referral', ref: "72ce74c"
 gem 'spree_advanced_reporting', github: 'binaryphile/spree_advanced_reporting', branch: '2-1-stable'
